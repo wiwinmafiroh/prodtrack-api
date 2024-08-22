@@ -1,0 +1,463 @@
+basePath: /
+definitions:
+  dto.CreatedProductData:
+    properties:
+      createdAt:
+        example: "2024-08-21T13:48:47.729483+07:00"
+        type: string
+      description:
+        example: Capture breathtaking moments in stunning 4K resolution.
+        type: string
+      id:
+        example: 1
+        type: integer
+      imageUrl:
+        example: https://example.com/digital_camera_4k.jpg
+        type: string
+      name:
+        example: Digital Camera 4K
+        type: string
+      price:
+        example: 7000000
+        type: number
+      userId:
+        example: 1
+        type: integer
+    type: object
+  dto.ProductCreatedResponse:
+    properties:
+      data:
+        $ref: '#/definitions/dto.CreatedProductData'
+      message:
+        example: Product created successfully
+        type: string
+      result:
+        example: SUCCESS
+        type: string
+      statusCode:
+        example: 201
+        type: integer
+    type: object
+  dto.ProductDeletedResponse:
+    properties:
+      deletedAt:
+        example: "2024-08-21T19:41:27.1757419+07:00"
+        type: string
+      message:
+        example: Product deleted successfully
+        type: string
+      result:
+        example: SUCCESS
+        type: string
+      statusCode:
+        example: 200
+        type: integer
+    type: object
+  dto.ProductRequest:
+    properties:
+      description:
+        example: Capture breathtaking moments in stunning 4K resolution.
+        type: string
+      imageUrl:
+        example: https://example.com/digital_camera_4k.jpg
+        type: string
+      name:
+        example: Digital Camera 4K
+        type: string
+      price:
+        example: 7000000
+        type: number
+    type: object
+  dto.ProductRetrievedResponse:
+    properties:
+      data:
+        $ref: '#/definitions/dto.RetrievedProductData'
+      message:
+        example: Product retrieved successfully
+        type: string
+      result:
+        example: SUCCESS
+        type: string
+      statusCode:
+        example: 200
+        type: integer
+    type: object
+  dto.ProductUpdateRequest:
+    properties:
+      description:
+        example: Bring the party anywhere by our Portable Bluetooth Speaker.
+        type: string
+      imageUrl:
+        example: https://example.com/portable_speaker.jpg
+        type: string
+      name:
+        example: Portable Bluetooth Speaker
+        type: string
+      price:
+        example: 500000
+        type: number
+    type: object
+  dto.ProductUpdatedResponse:
+    properties:
+      data:
+        $ref: '#/definitions/dto.UpdatedProductData'
+      message:
+        example: Product updated successfully
+        type: string
+      result:
+        example: SUCCESS
+        type: string
+      statusCode:
+        example: 200
+        type: integer
+    type: object
+  dto.ProductsRetrievedResponse:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/dto.RetrievedProductData'
+        type: array
+      message:
+        example: Products retrieved successfully
+        type: string
+      result:
+        example: SUCCESS
+        type: string
+      statusCode:
+        example: 200
+        type: integer
+    type: object
+  dto.RetrievedProductData:
+    properties:
+      createdAt:
+        example: "2024-08-21T13:48:47.729483+07:00"
+        type: string
+      description:
+        example: Capture breathtaking moments in stunning 4K resolution.
+        type: string
+      id:
+        example: 1
+        type: integer
+      imageUrl:
+        example: https://example.com/digital_camera_4k.jpg
+        type: string
+      name:
+        example: Digital Camera 4K
+        type: string
+      price:
+        example: 7000000
+        type: number
+      updatedAt:
+        example: "2024-08-21T15:21:08.548216+07:00"
+        type: string
+      userId:
+        example: 1
+        type: integer
+    type: object
+  dto.TokenData:
+    properties:
+      token:
+        example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiZXhwIjoxNzI0MjUxMTQyLCJpZCI6MSwicm9sZSI6ImFkbWluIn0.itsoI0KJmw9UiPL132kzzTWptIfN9K2SgimRCnQIXN8
+        type: string
+    type: object
+  dto.UpdatedProductData:
+    properties:
+      description:
+        example: Bring the party anywhere by our Portable Bluetooth Speaker.
+        type: string
+      id:
+        example: 1
+        type: integer
+      imageUrl:
+        example: https://example.com/portable_speaker.jpg
+        type: string
+      name:
+        example: Portable Bluetooth Speaker
+        type: string
+      price:
+        example: 500000
+        type: number
+      updatedAt:
+        example: "2024-08-21T15:21:08.548216+07:00"
+        type: string
+      userId:
+        example: 1
+        type: integer
+    type: object
+  dto.UserLoginRequest:
+    properties:
+      email:
+        example: john.doe@example.com
+        type: string
+      password:
+        example: password123
+        type: string
+    type: object
+  dto.UserLoginResponse:
+    properties:
+      data:
+        $ref: '#/definitions/dto.TokenData'
+      message:
+        example: User logged in successfully
+        type: string
+      result:
+        example: SUCCESS
+        type: string
+      statusCode:
+        example: 200
+        type: integer
+    type: object
+  dto.UserRegisterRequest:
+    properties:
+      email:
+        example: john.doe@example.com
+        type: string
+      name:
+        example: John Doe
+        type: string
+      password:
+        example: password123
+        type: string
+      role:
+        example: admin
+        type: string
+    type: object
+  dto.UserRegisterResponse:
+    properties:
+      message:
+        example: User registered successfully
+        type: string
+      result:
+        example: SUCCESS
+        type: string
+      statusCode:
+        example: 201
+        type: integer
+    type: object
+host: localhost:8080
+info:
+  contact:
+    email: wiwinmafiroh@gmail.com
+    name: Wiwin Mafiroh
+  description: ProdTrack API is a comprehensive solution for managing product data.
+    It includes full CRUD operations, along with robust authentication and authorization
+    mechanisms. Admin have the ability to manage all products, while regular users
+    are restricted to managing only their own products. The API is built using Golang
+    and the Gin framework.
+  title: The ProdTrack API Documentation
+  version: "1.0"
+paths:
+  /:
+    get:
+      description: This endpoint provides a simple welcome message. It doesn't require
+        authentication.
+      operationId: welcome-message
+      produces:
+      - text/html
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: Welcome message
+      tags:
+      - General
+  /products:
+    get:
+      description: Retrieve a list of products associated with the authenticated user.
+        Authentication is required using a bearer token. Admins will receive a list
+        of all products, while regular users will only receive the products they have
+        added.
+      operationId: get-products
+      parameters:
+      - default: Bearer <token>
+        description: Bearer token for authentication. Obtain this token by logging
+          in.
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.ProductsRetrievedResponse'
+      summary: Retrieve a list of products
+      tags:
+      - Products
+    post:
+      consumes:
+      - application/json
+      description: Create a new product by providing the necessary details. Authentication
+        is required using a bearer token. Ensure all required fields are included
+        in the request body.
+      operationId: create-product
+      parameters:
+      - default: Bearer <token>
+        description: Bearer token for authentication. Obtain this token by logging
+          in.
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Product creation data. Ensure all required fields are included.
+        in: body
+        name: Product
+        required: true
+        schema:
+          $ref: '#/definitions/dto.ProductRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/dto.ProductCreatedResponse'
+      summary: Create a new product
+      tags:
+      - Products
+  /products/{productId}:
+    delete:
+      description: Delete a specific product by its ID. Authentication is required
+        using a bearer token. Admins can delete any product, while regular users can
+        only delete the products they have added.
+      operationId: delete-product
+      parameters:
+      - default: Bearer <token>
+        description: Bearer token for authentication. Obtain this token by logging
+          in.
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: ID of the product to be deleted
+        in: path
+        name: productId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.ProductDeletedResponse'
+      summary: Delete a product by ID
+      tags:
+      - Products
+    get:
+      description: Retrieve the details of a specific product by its ID. Admins can
+        retrieve any product, while regular users can only retrieve the products they
+        have added. Authentication is required using a bearer token.
+      operationId: get-product-by-id
+      parameters:
+      - default: Bearer <token>
+        description: Bearer token for authentication. Obtain this token by logging
+          in.
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: ID of the product to be retrieved
+        in: path
+        name: productId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.ProductRetrievedResponse'
+      summary: Retrieve a product by ID
+      tags:
+      - Products
+    put:
+      consumes:
+      - application/json
+      description: Update the details of a specific product by its ID. Authentication
+        is required using a bearer token. Admins can update any product, while regular
+        users can only update the products they have added.
+      operationId: update-product-by-id
+      parameters:
+      - default: Bearer <token>
+        description: Bearer token for authentication. Obtain this token by logging
+          in.
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: ID of the product to be updated
+        in: path
+        name: productId
+        required: true
+        type: integer
+      - description: Product update data. Ensure the request body contains all required
+          fields for the update.
+        in: body
+        name: Product
+        required: true
+        schema:
+          $ref: '#/definitions/dto.ProductUpdateRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.ProductUpdatedResponse'
+      summary: Update a product by ID
+      tags:
+      - Products
+  /users/login:
+    post:
+      consumes:
+      - application/json
+      description: Log in a user by providing the necessary credentials.
+      operationId: user-login
+      parameters:
+      - description: User login data including email and password.
+        in: body
+        name: User
+        required: true
+        schema:
+          $ref: '#/definitions/dto.UserLoginRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.UserLoginResponse'
+      summary: Log in a user
+      tags:
+      - Users
+  /users/register:
+    post:
+      consumes:
+      - application/json
+      description: Register a new user by providing the necessary information.
+      operationId: user-register
+      parameters:
+      - description: User registration data. The role can be either 'admin' or 'user'.
+        in: body
+        name: User
+        required: true
+        schema:
+          $ref: '#/definitions/dto.UserRegisterRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/dto.UserRegisterResponse'
+      summary: Register a new user
+      tags:
+      - Users
+schemes:
+- http
+swagger: "2.0"
