@@ -234,7 +234,7 @@ definitions:
         example: 201
         type: integer
     type: object
-host: localhost:8080
+host: localhost:3000
 info:
   contact:
     email: wiwinmafiroh@gmail.com

@@ -20,7 +20,7 @@ import (
 // @description ProdTrack API is a comprehensive solution for managing product data. It includes full CRUD operations, along with robust authentication and authorization mechanisms. Admin have the ability to manage all products, while regular users are restricted to managing only their own products. The API is built using Golang and the Gin framework.
 // @contact.name Wiwin Mafiroh
 // @contact.email wiwinmafiroh@gmail.com
-// @host localhost:8080
+// @host localhost:3000
 // @BasePath /
 // @schemes http
 func StartApp() {
